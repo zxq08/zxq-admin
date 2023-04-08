@@ -1,11 +1,16 @@
 {
   "name": "template",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "./src/index.tsx",
   "license": "MIT",
+  "scripts": {
+    "dev": "webpack serve --mode=development --config ./build/webpack.config.js",
+    "build": "webpack --mode=production --config ./build/webpack.config.js"
+  },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "typescript": "^5.0.4",
     "webpack": "^5.77.0"
   },
   "devDependencies": {
