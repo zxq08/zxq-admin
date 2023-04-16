@@ -112,7 +112,7 @@
     "typing.d.ts",
     "src/**/*.ts",
     "src/**/*.tsx",
-    "src/**/*.less"   // 添加 .less 文件到 include 字段
+    "src/**/*.less" // 添加 .less 文件到 include 字段
   ],
   "exclude": ["node_modules/**/*"]
 }
