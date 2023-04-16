@@ -22,7 +22,10 @@ module.exports = {
             }
           },
           {
-            loader: 'ts-loader'
+            loader: 'ts-loader',
+            options: {
+              happyPackMode: true
+            }
           }
         ],
         exclude: '/node_modules/'
@@ -30,7 +33,7 @@ module.exports = {
       {
         test: /\.(png|jpg|gif|woff|svg|eot|ttf)$/,
         use: 'asset/inline',
-        parse: {
+        parser: {
           esModule: false,
           name: '[name].[ext]',
           dataurlCondition: {
@@ -41,7 +44,7 @@ module.exports = {
       {
         test: /\.(eot|ttf|woff|woff2)$/,
         use: 'asset/resource',
-        parse: {
+        parser: {
           name: '[name].[ext]?[hash]'
         }
       },
