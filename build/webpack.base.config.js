@@ -78,7 +78,12 @@ module.exports = {
             loader: 'style-loader'
           },
           {
-            loader: 'css-loader' // translates CSS into CommonJS
+            loader: 'css-loader', // translates CSS into CommonJS
+            options: {
+              modules: {
+                localIdentName: '[local]_[hash:base64:5]' // 可自定义 CSS 类名生成规则
+              }
+            }
           },
           {
             loader: 'less-loader', // compiles Less to CSS

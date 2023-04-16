@@ -106,5 +106,13 @@
     /* Completeness */
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
     "skipLibCheck": true /* Skip type checking all .d.ts files. */
-  }
+  },
+  "include": [
+    "globals.d.ts",
+    "typing.d.ts",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.less"   // 添加 .less 文件到 include 字段
+  ],
+  "exclude": ["node_modules/**/*"]
 }
