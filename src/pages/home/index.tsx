@@ -5,7 +5,7 @@ import {
 } from 'react'
 import { Typography } from 'antd'
 
-import styles from './home.module.less'
+import styles from './index.module.less'
 
 const { Title, Paragraph, Text } = Typography
 
@@ -35,6 +35,7 @@ const HomePage: FC<HomePageProps> = props => {
           </Text>
           .
         </Paragraph>
+        <a href="/list">to list</a>
       </Typography>
     </div>
   )

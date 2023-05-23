@@ -3,12 +3,11 @@
 webpack5
 ts
 react
-react-router
 less
 antd
 tailwindcss
-css module
 axios
+react-router
 lodash-es
 zustand
 qiankun/模块联邦
