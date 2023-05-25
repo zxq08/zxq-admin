@@ -7,6 +7,8 @@ import { Typography } from 'antd'
 
 import styles from './index.module.less'
 
+import { Outlet } from 'react-router-dom'
+
 const { Title, Paragraph, Text } = Typography
 
 interface HomePageProps {
@@ -36,6 +38,8 @@ const HomePage: FC<HomePageProps> = props => {
           .
         </Paragraph>
         <a href="/list">to list</a>
+
+        <Outlet />
       </Typography>
     </div>
   )
