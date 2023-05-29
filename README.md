@@ -5,9 +5,8 @@ ts
 react
 less
 antd
-tailwindcss
 axios
 react-router
 lodash-es
-zustand
-qiankun/模块联邦
+*zustand
+*qiankun/模块联邦
