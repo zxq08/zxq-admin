@@ -70,7 +70,7 @@ const ListPage: FC = () => {
           textAlign: 'center',
           marginTop: 12,
           height: 32,
-          lineHeight: '32px'
+          lineHeight: 32
         }}
       >
         <Button onClick={onLoadMore}>loading more</Button>
