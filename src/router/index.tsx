@@ -3,6 +3,7 @@ import ReactDom from 'react-dom/client'
 import { createBrowserRouter } from 'react-router-dom'
 import HomePage from '../pages/home'
 import ListPage from '../pages/list'
+import ChartPage from '../pages/charts'
 import ErrorPage from '../pages/error'
 
 const Route = createBrowserRouter([
@@ -13,6 +14,10 @@ const Route = createBrowserRouter([
   {
     path: '/list',
     element: <ListPage></ListPage>
+  },
+  {
+    path: '/charts',
+    element: <ChartPage></ChartPage>
   },
   {
     path: '*',
