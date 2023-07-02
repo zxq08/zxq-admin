@@ -4,6 +4,7 @@ import { createBrowserRouter } from 'react-router-dom'
 import HomePage from '../pages/home'
 import ListPage from '../pages/list'
 import ChartPage from '../pages/charts'
+import ScrollPage from '../pages/scroll'
 import ErrorPage from '../pages/error'
 
 const Route = createBrowserRouter([
@@ -14,6 +15,10 @@ const Route = createBrowserRouter([
   {
     path: '/list',
     element: <ListPage></ListPage>
+  },
+  {
+    path: '/scroll',
+    element: <ScrollPage></ScrollPage>
   },
   {
     path: '/charts',
