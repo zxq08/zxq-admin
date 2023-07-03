@@ -5,6 +5,7 @@ import HomePage from '../pages/home'
 import ListPage from '../pages/list'
 import ChartPage from '../pages/charts'
 import ScrollPage from '../pages/scroll'
+import FormPage from '../pages/form'
 import ErrorPage from '../pages/error'
 
 const Route = createBrowserRouter([
@@ -19,6 +20,10 @@ const Route = createBrowserRouter([
   {
     path: '/scroll',
     element: <ScrollPage></ScrollPage>
+  },
+  {
+    path: '/form',
+    element: <FormPage></FormPage>
   },
   {
     path: '/charts',
