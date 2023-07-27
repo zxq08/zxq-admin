@@ -1,4 +1,7 @@
-import React, { useState, useEffect, FC } from 'react'
+import React, {
+  Component
+  //, { useState, useEffect, FC }
+} from 'react'
 import { Avatar, Button, List, Skeleton } from 'antd'
 import './index.module.less'
 
@@ -22,87 +25,113 @@ interface DataType {
 const count = 3
 const fakeDataUrl = `https://randomuser.me/api/?results=${count}&inc=name,gender,email,nat,picture&noinfo`
 
-const ListPage: FC = () => {
-  const [initLoading, setInitLoading] = useState(true)
-  const [loading, setLoading] = useState(false)
-  const [data, setData] = useState<DataType[]>([])
-  const [list, setList] = useState<DataType[]>([])
+// const ListPage: FC = () => {
+//   const [initLoading, setInitLoading] = useState(true)
+//   const [loading, setLoading] = useState(false)
+//   const [data, setData] = useState<DataType[]>([])
+//   const [list, setList] = useState<DataType[]>([])
 
-  useEffect(() => {
-    fetch(fakeDataUrl)
-      .then(res => res.json())
-      .then(res => {
-        setInitLoading(false)
-        setData(res.results)
-        setList(res.results)
-      })
-  }, [])
+//   useEffect(() => {
+//     fetch(fakeDataUrl)
+//       .then(res => res.json())
+//       .then(res => {
+//         setInitLoading(false)
+//         setData(res.results)
+//         setList(res.results)
+//       })
+//   }, [])
 
-  const onLoadMore = () => {
-    setLoading(true)
-    setList(
-      data.concat(
-        [...new Array(count)].map(() => ({
-          loading: true,
-          name: {},
-          picture: {}
-        }))
-      )
-    )
-    fetch(fakeDataUrl)
-      .then(res => res.json())
-      .then(res => {
-        const newData = data.concat(res.results)
-        setData(newData)
-        setList(newData)
-        setLoading(false)
-        // Resetting window's offsetTop so as to display react-virtualized demo underfloor.
-        // In real scene, you can using public method of react-virtualized:
-        // https://stackoverflow.com/questions/46700726/how-to-use-public-method-updateposition-of-react-virtualized
-        window.dispatchEvent(new Event('resize'))
-      })
+//   const onLoadMore = () => {
+//     setLoading(true)
+//     setList(
+//       data.concat(
+//         [...new Array(count)].map(() => ({
+//           loading: true,
+//           name: {},
+//           picture: {}
+//         }))
+//       )
+//     )
+//     fetch(fakeDataUrl)
+//       .then(res => res.json())
+//       .then(res => {
+//         const newData = data.concat(res.results)
+//         setData(newData)
+//         setList(newData)
+//         setLoading(false)
+//         // Resetting window's offsetTop so as to display react-virtualized demo underfloor.
+//         // In real scene, you can using public method of react-virtualized:
+//         // https://stackoverflow.com/questions/46700726/how-to-use-public-method-updateposition-of-react-virtualized
+//         window.dispatchEvent(new Event('resize'))
+//       })
+//   }
+
+//   const loadMore =
+//     !initLoading && !loading ? (
+//       <div
+//         style={{
+//           textAlign: 'center',
+//           marginTop: 12,
+//           height: 32,
+//           lineHeight: 32
+//         }}
+//       >
+//         <Button onClick={onLoadMore}>loading more</Button>
+//       </div>
+//     ) : null
+
+//   return (
+//     <List
+//       className="demo-loadmore-list"
+//       loading={initLoading}
+//       itemLayout="horizontal"
+//       loadMore={loadMore}
+//       dataSource={list}
+//       renderItem={item => (
+//         <List.Item
+//           actions={[
+//             <a key="list-loadmore-edit">edit</a>,
+//             <a key="list-loadmore-more">more</a>
+//           ]}
+//         >
+//           <Skeleton avatar title={false} loading={item.loading} active>
+//             <List.Item.Meta
+//               avatar={<Avatar src={item.picture.large} />}
+//               title={<a href="https://ant.design">{item.name?.last}</a>}
+//               description="Ant Design, a design language for background applications, is refined by Ant UED Team"
+//             />
+//             <div>content</div>
+//           </Skeleton>
+//         </List.Item>
+//       )}
+//     />
+//   )
+// }
+
+class ListPage extends Component {
+  constructor(props: any) {
+    super(props)
+    this.state = {
+      num: 0
+    }
   }
 
-  const loadMore =
-    !initLoading && !loading ? (
-      <div
-        style={{
-          textAlign: 'center',
-          marginTop: 12,
-          height: 32,
-          lineHeight: 32
-        }}
-      >
-        <Button onClick={onLoadMore}>loading more</Button>
-      </div>
-    ) : null
+  onClick = () => {
+    setTimeout(() => {
+      this.setState({
+        num: this.state?.num + 1
+      })
+      console.log(this.state?.num)
+    }, 2000)
+  }
 
-  return (
-    <List
-      className="demo-loadmore-list"
-      loading={initLoading}
-      itemLayout="horizontal"
-      loadMore={loadMore}
-      dataSource={list}
-      renderItem={item => (
-        <List.Item
-          actions={[
-            <a key="list-loadmore-edit">edit</a>,
-            <a key="list-loadmore-more">more</a>
-          ]}
-        >
-          <Skeleton avatar title={false} loading={item.loading} active>
-            <List.Item.Meta
-              avatar={<Avatar src={item.picture.large} />}
-              title={<a href="https://ant.design">{item.name?.last}</a>}
-              description="Ant Design, a design language for background applications, is refined by Ant UED Team"
-            />
-            <div>content</div>
-          </Skeleton>
-        </List.Item>
-      )}
-    />
-  )
+  render() {
+    return (
+      <div>
+        <button onClick={this.onClick}>num ++</button>
+      </div>
+    )
+  }
 }
 
 export default ListPage

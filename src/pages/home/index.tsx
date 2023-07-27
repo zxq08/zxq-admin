@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {
-  //  useState, useEffect,
+  useState, //useEffect,
   FC
 } from 'react'
 import { Typography } from 'antd'
@@ -16,10 +16,22 @@ interface HomePageProps {
 }
 
 const HomePage: FC<HomePageProps> = props => {
+  const [num, setNum] = useState<number>(0)
+
+  const onClick = () => {
+    setTimeout(() => {
+      setNum(num + 1)
+      console.log(num)
+    }, 2000)
+  }
+
   return (
     <div className={styles.wrap}>
       <Typography>
-        <Title>Introduction {props.element}</Title>
+        <Title>
+          Introduction {props.element}
+          <button onClick={onClick}>num ++</button>
+        </Title>
         <Paragraph>
           In the process of internal desktop applications development, many
           different design specs and implementations would be involved, which
