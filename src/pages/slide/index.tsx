@@ -1,6 +1,8 @@
 import * as React from 'react'
 import { useState, useEffect, FC } from 'react'
 import styles from './index.module.less'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 interface SlideProps {
   data?: any
@@ -37,6 +39,10 @@ const Slide: FC<SlideProps> = props => {
   const [current, setCurrent] = useState(0)
   const [slideX, setSlideX] = useState(0)
 
+  useEffect(() => {
+    AOS.init()
+  }, [])
+
   const handlePrev = () => {
     if (current === 0) {
       return
@@ -70,8 +76,10 @@ const Slide: FC<SlideProps> = props => {
           {DIVS.map((item: any) => {
             return (
               <div
+                data-aos="fade-up-right"
+                data-aos-once="false"
                 key={item.name}
-                className={styles['div']}
+                className={`${styles['div']}`}
                 style={{ background: item.color }}
               >
                 {item.name}

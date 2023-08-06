@@ -4,9 +4,7 @@ import {
   FC
 } from 'react'
 import { Typography } from 'antd'
-
 import styles from './index.module.less'
-
 import { Outlet } from 'react-router-dom'
 
 const { Title, Paragraph, Text } = Typography
@@ -26,7 +24,7 @@ const HomePage: FC<HomePageProps> = props => {
   }
 
   return (
-    <div className={styles.wrap}>
+    <div className={`${styles.wrap}`}>
       <Typography>
         <Title>
           Introduction {props.element}
