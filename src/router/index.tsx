@@ -1,17 +1,24 @@
 import * as React from 'react'
 import ReactDom from 'react-dom/client'
 import { createBrowserRouter } from 'react-router-dom'
+import ResumePage from '../pages/resume'
 import HomePage from '../pages/home'
 import ListPage from '../pages/list'
 import ChartPage from '../pages/charts'
 import ScrollPage from '../pages/scroll'
 import FormPage from '../pages/form'
 import SlidePage from '../pages/slide'
+import AsyncPage from '../pages/async'
+import SuspensePage from '../pages/susp'
 import ErrorPage from '../pages/error'
 
 const Route = createBrowserRouter([
   {
     path: '/',
+    element: <ResumePage></ResumePage>
+  },
+  {
+    path: '/home',
     element: <HomePage></HomePage>
   },
   {
@@ -33,6 +40,14 @@ const Route = createBrowserRouter([
   {
     path: '/slide',
     element: <SlidePage></SlidePage>
+  },
+  {
+    path: '/async',
+    element: <AsyncPage></AsyncPage>
+  },
+  {
+    path: '/susp',
+    element: <SuspensePage></SuspensePage>
   },
   {
     path: '*',

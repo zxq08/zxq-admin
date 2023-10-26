@@ -1,0 +1,72 @@
+{
+  "id": "4299192",
+  "name": "resume",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "7084883",
+      "name": "学校",
+      "font_class": "xuexiao",
+      "unicode": "e62c",
+      "unicode_decimal": 58924
+    },
+    {
+      "icon_id": "13638695",
+      "name": "工作",
+      "font_class": "gongzuo",
+      "unicode": "e656",
+      "unicode_decimal": 58966
+    },
+    {
+      "icon_id": "20406867",
+      "name": "项目_项目管理",
+      "font_class": "xiangmu",
+      "unicode": "e797",
+      "unicode_decimal": 59287
+    },
+    {
+      "icon_id": "5027",
+      "name": "手机",
+      "font_class": "shouji",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "1305122",
+      "name": "时间",
+      "font_class": "shijian",
+      "unicode": "e638",
+      "unicode_decimal": 58936
+    },
+    {
+      "icon_id": "7191802",
+      "name": "邮箱",
+      "font_class": "youxiang",
+      "unicode": "e631",
+      "unicode_decimal": 58929
+    },
+    {
+      "icon_id": "8328456",
+      "name": "性别区分",
+      "font_class": "xingbie",
+      "unicode": "e619",
+      "unicode_decimal": 58905
+    },
+    {
+      "icon_id": "10584851",
+      "name": "年龄",
+      "font_class": "nianling",
+      "unicode": "e69d",
+      "unicode_decimal": 59037
+    },
+    {
+      "icon_id": "710137",
+      "name": "指缘地点2",
+      "font_class": "zhiyuandidian2",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    }
+  ]
+}
