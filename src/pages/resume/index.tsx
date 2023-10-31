@@ -25,7 +25,9 @@ function Resume() {
         <div className={styles.headTitle}>个人简历</div>
         <div className={styles.imgWrap}>
           <img
-            src="https://thirdwx.qlogo.cn/mmopen/vi_32/FPHFDD1vQFM7aiajzPyDhia1ArEGL3euMyURIOQlMxKrJn1eicicw56wEn7rYppwY3KZia32UPiadLstC44VNsyK4BtQ/132"
+            // src="https://thirdwx.qlogo.cn/mmopen/vi_32/FPHFDD1vQFM7aiajzPyDhia1ArEGL3euMyURIOQlMxKrJn1eicicw56wEn7rYppwY3KZia32UPiadLstC44VNsyK4BtQ/132"
+            // src="/image/QRcode.png"
+            src="/image/wx.jpg"
             alt="头像"
           />
         </div>
