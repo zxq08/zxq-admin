@@ -11,8 +11,15 @@ import SlidePage from '../pages/slide'
 import AsyncPage from '../pages/async'
 import SuspensePage from '../pages/susp'
 import ErrorPage from '../pages/error'
+import { microRoute, Micro } from './micro'
 
-const Route = createBrowserRouter([
+const errorRoute = [
+  {
+    path: '*',
+    element: <ErrorPage></ErrorPage>
+  }
+]
+const routeArrs = [
   {
     path: '/',
     element: <ResumePage></ResumePage>
@@ -48,11 +55,15 @@ const Route = createBrowserRouter([
   {
     path: '/susp',
     element: <SuspensePage></SuspensePage>
-  },
-  {
-    path: '*',
-    element: <ErrorPage></ErrorPage>
   }
-])
+  // {
+  //   path: '/micro/app',
+  //   element: <Micro></Micro>
+  // }
+]
+  .concat(microRoute)
+  .concat(errorRoute)
+console.log('routeArrs', routeArrs)
+const Route = createBrowserRouter(routeArrs)
 
 export default Route
