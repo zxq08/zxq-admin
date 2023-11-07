@@ -9,7 +9,8 @@ import {
   educationData,
   educationDataType,
   projectData,
-  projectDataType
+  projectDataType,
+  skillData
 } from './data'
 
 const iconStyles = {
@@ -23,7 +24,7 @@ function Resume() {
     <div className={styles.wrap}>
       <div className={styles.headBg}>
         <div className={styles.headTitle}>个人简历</div>
-        <div className={styles.imgWrap}>
+        <div className={styles.imgWrap} style={{ display: 'none' }}>
           <img
             // src="https://thirdwx.qlogo.cn/mmopen/vi_32/FPHFDD1vQFM7aiajzPyDhia1ArEGL3euMyURIOQlMxKrJn1eicicw56wEn7rYppwY3KZia32UPiadLstC44VNsyK4BtQ/132"
             // src="/image/QRcode.png"
@@ -40,13 +41,6 @@ function Resume() {
         <Row gutter={[0, 8]}>
           <Col span={8}>
             <div className={styles.infoContent}>
-              <Icon style={iconStyles} type="icon-nianling"></Icon>
-              <span>年龄：</span>
-              <span>29</span>
-            </div>
-          </Col>
-          <Col span={8}>
-            <div className={styles.infoContent}>
               <Icon style={iconStyles} type="icon-xingbie"></Icon>
               <span>性别：</span>
               <span>男</span>
@@ -59,18 +53,12 @@ function Resume() {
               <span>13701141845</span>
             </div>
           </Col>
+          <Col span={8}></Col>
           <Col span={8}>
             <div className={styles.infoContent}>
               <Icon style={iconStyles} type="icon-shijian"></Icon>
               <span>工作年龄：</span>
               <span>6年</span>
-            </div>
-          </Col>
-          <Col span={8}>
-            <div className={styles.infoContent}>
-              <Icon style={iconStyles} type="icon-zhiyuandidian2"></Icon>
-              <span>籍贯：</span>
-              <span>湖南</span>
             </div>
           </Col>
           <Col span={8}>
@@ -82,6 +70,46 @@ function Resume() {
           </Col>
         </Row>
       </div>
+
+      <div className={styles.content}>
+        <div className={styles.contentHead}>
+          <div className={styles.contengHeadIcon}>
+            <div className={styles.contengHeadIconBg}>
+              <Icon
+                type="icon-jishu"
+                style={{ fontSize: 20, color: '#fff', margin: 0 }}
+              />
+            </div>
+          </div>
+          <Divider
+            orientation="left"
+            plain
+            dashed
+            style={{ borderColor: '#1890ff', margin: '0 0 0 20px' }}
+          >
+            <span className={styles.contentTitle}>专业技能</span>
+          </Divider>
+        </div>
+        <div className={styles.contentLeft}>
+          <Divider
+            plain
+            type="vertical"
+            style={{ borderColor: '#1890ff', height: 'auto', margin: '0 17px' }}
+          ></Divider>
+          <div className={styles.companyWrap}>
+            {skillData.map((skill: string, idx) => {
+              return (
+                <div key={idx} style={{ lineHeight: '24px' }}>
+                  <Row justify="space-around">
+                    <Col span={24}>{skill}</Col>
+                  </Row>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </div>
+
       <div className={styles.content}>
         <div className={styles.contentHead}>
           <div className={styles.contengHeadIcon}>
