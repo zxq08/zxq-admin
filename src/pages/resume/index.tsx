@@ -34,11 +34,25 @@ function Resume() {
         </div>
       </div>
       <div className={styles.infoWrap}>
-        <div className={styles.infoTitle}>
+        {/* <div className={styles.infoTitle}>
           <span>朱兴庆</span>
           <span>前端工程师</span>
-        </div>
-        <Row gutter={[0, 8]}>
+        </div> */}
+        <Row gutter={[12, 12]}>
+          <Col span={8}>
+            <div className={styles.infoContent}>
+              <Icon style={iconStyles} type="icon-xingbie"></Icon>
+              <span>姓名：</span>
+              <span>朱兴庆</span>
+            </div>
+          </Col>
+          <Col span={8}>
+            <div className={styles.infoContent}>
+              <Icon style={iconStyles} type="icon-xingbie"></Icon>
+              <span>岗位：</span>
+              <span>前端工程师</span>
+            </div>
+          </Col>
           <Col span={8}>
             <div className={styles.infoContent}>
               <Icon style={iconStyles} type="icon-xingbie"></Icon>
@@ -49,22 +63,21 @@ function Resume() {
           <Col span={8}>
             <div className={styles.infoContent}>
               <Icon style={iconStyles} type="icon-shouji"></Icon>
-              <span>手机号码：</span>
+              <span>手机：</span>
               <span>13701141845</span>
             </div>
           </Col>
-          <Col span={8}></Col>
           <Col span={8}>
             <div className={styles.infoContent}>
               <Icon style={iconStyles} type="icon-shijian"></Icon>
-              <span>工作年龄：</span>
+              <span>工龄：</span>
               <span>6年</span>
             </div>
           </Col>
           <Col span={8}>
             <div className={styles.infoContent}>
               <Icon style={iconStyles} type="icon-youxiang"></Icon>
-              <span>电子邮箱：</span>
+              <span>邮箱：</span>
               <span>461890276@qq.com</span>
             </div>
           </Col>
@@ -97,15 +110,17 @@ function Resume() {
             style={{ borderColor: '#1890ff', height: 'auto', margin: '0 17px' }}
           ></Divider>
           <div className={styles.companyWrap}>
-            {skillData.map((skill: string, idx) => {
-              return (
-                <div key={idx} style={{ lineHeight: '24px' }}>
-                  <Row justify="space-around">
-                    <Col span={24}>{skill}</Col>
-                  </Row>
-                </div>
-              )
-            })}
+            <ul className={styles.styleUl}>
+              {skillData.map((skill: string, idx) => {
+                return (
+                  <li key={idx} style={{ lineHeight: '24px' }}>
+                    <Row justify="space-around">
+                      <Col span={24}>{skill}</Col>
+                    </Row>
+                  </li>
+                )
+              })}
+            </ul>
           </div>
         </div>
       </div>
@@ -140,16 +155,28 @@ function Resume() {
               return (
                 <div className={styles.companyData} key={idx}>
                   <Row justify="space-around">
-                    <Col span={8}>{company.date}</Col>
-                    <Col span={8}>{company.name}</Col>
-                    <Col span={8}>{company.position}</Col>
+                    <Col span={12} style={{ fontWeight: 500 }}>
+                      {company.name}
+                    </Col>
+                    <Col span={12} style={{ textAlign: 'right' }}>
+                      {company.date}
+                    </Col>
+                    {/* <Col span={8}>{company.position}</Col> */}
                   </Row>
                   <p style={{ marginTop: 10, fontWeight: 500 }}>主要职责：</p>
-                  {Array.isArray(company.duty) ? (
-                    company.duty.map((it: string, inx) => <p key={inx}>{it}</p>)
-                  ) : (
-                    <p>{company.duty}</p>
-                  )}
+                  <ul className={styles.styleUl}>
+                    {Array.isArray(company.duty) ? (
+                      company.duty.map((it: string, inx) => (
+                        <li key={inx}>
+                          <p>{it}</p>
+                        </li>
+                      ))
+                    ) : (
+                      <li key={0}>
+                        <p>{company.duty}</p>
+                      </li>
+                    )}
+                  </ul>
                 </div>
               )
             })}
@@ -186,13 +213,29 @@ function Resume() {
             {projectData.map((project: projectDataType, idx) => {
               return (
                 <div className={styles.companyData} key={idx}>
-                  <Row>
-                    <Col span={24} style={{ fontWeight: 500 }}>
-                      {project.name}
+                  <Row gutter={[0, 8]}>
+                    <Col
+                      span={24}
+                      style={{
+                        display: 'flex',
+                        justifyContent: 'space-between'
+                      }}
+                    >
+                      <span style={{ fontWeight: 500, fontSize: 16 }}>
+                        {project.name}
+                      </span>
+                      <span>{project.date}</span>
                     </Col>
-                    <Col span={24}>{project.technologyStack}</Col>
+                    <Col span={24}>
+                      <span style={{}}>项目描述：</span>
+                      {project.desc}
+                    </Col>
+                    <Col span={24}>
+                      <span style={{}}>技术栈：</span>
+                      {project.technologyStack}
+                    </Col>
                   </Row>
-                  <p style={{ marginTop: 10, fontWeight: 500 }}>核心功能：</p>
+                  <p style={{ marginTop: 8 }}>核心功能：</p>
                   <ul className={styles.styleUl}>
                     {Array.isArray(project.business) ? (
                       project.business.map((it: string, inx) => (
