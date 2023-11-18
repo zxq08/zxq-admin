@@ -13,6 +13,21 @@ interface HomePageProps {
   element?: any
 }
 
+const LIST = [
+  {
+    id: 1,
+    group: 1
+  },
+  {
+    id: 2,
+    group: 1
+  },
+  {
+    id: 3,
+    group: 22
+  }
+]
+
 const HomePage: FC<HomePageProps> = props => {
   const [num, setNum] = useState<number>(0)
 
@@ -22,6 +37,17 @@ const HomePage: FC<HomePageProps> = props => {
       console.log(num)
     }, 2000)
   }
+
+  const _list: any = []
+  LIST.forEach((v, i) => {
+    const hasVIndex = _list.findIndex((item: any) => item.group === v.group)
+    if (hasVIndex === -1) {
+      _list.push({ group: v.group, items: [] })
+    } else {
+      _list[hasVIndex].items.push(v)
+    }
+  })
+  console.log('_list', _list)
 
   return (
     <div className={`${styles.wrap}`}>

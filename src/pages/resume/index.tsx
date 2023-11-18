@@ -41,14 +41,14 @@ function Resume() {
         <Row gutter={[12, 12]}>
           <Col span={8}>
             <div className={styles.infoContent}>
-              <Icon style={iconStyles} type="icon-xingbie"></Icon>
+              <Icon style={iconStyles} type="icon-xingming"></Icon>
               <span>姓名：</span>
               <span>朱兴庆</span>
             </div>
           </Col>
           <Col span={8}>
             <div className={styles.infoContent}>
-              <Icon style={iconStyles} type="icon-xingbie"></Icon>
+              <Icon style={iconStyles} type="icon-gangwei"></Icon>
               <span>岗位：</span>
               <span>前端工程师</span>
             </div>

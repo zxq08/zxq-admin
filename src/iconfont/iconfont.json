@@ -6,6 +6,20 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "16365861",
+      "name": "岗位",
+      "font_class": "gangwei",
+      "unicode": "e694",
+      "unicode_decimal": 59028
+    },
+    {
+      "icon_id": "712103",
+      "name": "姓名",
+      "font_class": "xingming",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
       "icon_id": "3868269",
       "name": "技术",
       "font_class": "jishu",
